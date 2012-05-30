@@ -84,3 +84,47 @@ angular.module('myApp.directives', [])
             replace: true
         };
     })
+    .directive('masonry',function(){
+        return function(scope, elm, attrs) {
+            elm.masonry({
+                // options
+                itemSelector : '.item',
+                columnWidth : 300
+            });
+        };
+    })
+    .directive('flash', function() {
+        return {
+            restrict: 'E',
+            transclude: false,
+            scope: {height:'evaluate',width:'evaluate',source:'evaluate',name:'attribute',swf:'evaluate'},
+            link: function(scope, element, attrs) {
+                // For version detection, set to min. required Flash Player version, or 0 (or 0.0.0), for no version detection.
+                var swfVersionStr = "10.2.0";
+                // To use express install, set to playerProductInstall.swf, otherwise the empty string.
+                var xiSwfUrlStr = "playerProductInstall.swf";
+                var flashvars = {};
+                flashvars.xmlFile = scope.source;
+                flashvars.adWidth = scope.width;
+                flashvars.adHeight = scope.height;
+                var params = {};
+                params.quality = "high";
+                params.bgcolor = "#ffffff";
+                params.allowscriptaccess = "sameDomain";
+                params.allowfullscreen = "true";
+                var attributes = {};
+                attributes.id = scope.name;
+                attributes.name = scope.name;
+                attributes.align = "middle";
+                swfobject.embedSWF(
+                    scope.swf, "flashContent",
+                    scope.width, scope.height,
+                    swfVersionStr, xiSwfUrlStr,
+                    flashvars, params, attributes);
+                // JavaScript enabled so display the flashContent div in case it is not replaced with a swf object.
+                swfobject.createCSS("#flashContent", "display:block;text-align:left;");
+            },
+            template:'<div id="flashContent"></div>',
+            replace: true
+        };
+    })

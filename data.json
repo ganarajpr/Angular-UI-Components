@@ -1,0 +1,22 @@
+[
+    {
+        "width":"400",
+        "height":"250",
+        "source":"xml/test0.xml"
+    },
+    {
+        "width":"300",
+        "height":"100",
+        "source":"xml/test0.xml"
+    },
+    {
+        "width":"400",
+        "height":"200",
+        "source":"xml/test0.xml"
+    },
+    {
+        "width":"200",
+        "height":"200",
+        "source":"xml/test0.xml"
+    }
+]

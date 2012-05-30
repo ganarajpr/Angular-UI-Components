@@ -6,3 +6,87 @@
     width:100%;
     height: 100%
 }
+html,
+body
+{
+    height: 100%;
+}
+
+.nav-list > .active > a, .nav-list > .active > a:hover {
+    background-color: #333;
+    color: #EEE;
+    text-shadow: 0 0px 0 rgba(0, 0, 0, 0.2);
+    
+}
+
+.nav-list li
+{
+    position: relative;
+}
+
+.arrow-left {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom:10px solid transparent;
+    border-right:10px solid #EEE;
+    position: absolute;
+    right: -15px;
+    top:0;
+}
+
+.nav-list > li > a, .nav-list .nav-header {
+    text-shadow: 0 0px 0 rgba(255, 255, 255, 0.5);
+    color: #EEE;
+}
+
+.nav > li > a:hover {
+    -moz-text-blink: none;
+    -moz-text-decoration-color: -moz-use-text-color;
+    -moz-text-decoration-line: none;
+    -moz-text-decoration-style: solid;
+    background-color: #333;
+}
+
+
+/*.item {
+    width: 220px;
+    margin: 10px;
+    float: left;
+}*/
+
+.fullHeight
+{
+    height: 100%;
+    display: block;
+}
+
+.leftMenu
+{
+    background-color: #666;
+}
+
+.item
+{
+    float: left;
+    margin: 10px;
+}
+
+.col1
+{
+    width: 150px;
+}
+
+.col2
+{
+    width: 360px;
+}
+
+.col3
+{
+    width: 740px;
+}
+
+
+
+
