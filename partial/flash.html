@@ -1,0 +1,5 @@
+<div class="span12 fullHeight" ng-controller="FlashController">
+    <div ng-repeat="ad in data" ng-class="itemClass" ng-controller="ItemController">
+        <flash width="ad.width" height="ad.height" swf="'vectorScene.swf'" name="vectorScene" source="ad.source"></flash>
+    </div>
+</div>
