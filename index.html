@@ -12,33 +12,39 @@
 <div class="container-fluid fullHeight" id="main">
     <div class="row-fluid fullHeight" ng-controller="DisplayController">
         <div class="span2 fullHeight leftMenu">
-            <ul class="nav nav-list">
+            <ul class="nav nav-list" navlist>
                 <li class="nav-header">
                     Components
                 </li>
-                <li class="active">
-                    <a href="" ng-click="setComponent('flash')">Flash Embedder</a> <div class="arrow-left"></div>
+                <li class="active" ng-click="setActive($event)">
+                    <a href="" ng-click="setComponent('flash')">Flash Embedder</a>
                 </li>
-                <li>
-                    <a href="">Code Mirror</a>
+                <li ng-click="setActive($event)">
+                    <a href="" ng-click="setComponent('tabs')">Tabs</a>
                 </li>
-                <li>
-                    <a href="">Accordion</a>
+                <li ng-click="setActive($event)">
+                    <a href="" ng-click="setComponent('cm')">Code Mirror</a>
                 </li>
-                <li>
-                    <a href="">Drag & Resize</a>
+                <li ng-click="setActive($event)">
+                    <a href="" ng-click="setComponent('accordion')">Accordion</a>
                 </li>
-                <li>
-                    <a href="">Just Drag</a>
+                <li ng-click="setActive($event)">
+                    <a href="" ng-click="setComponent('dnr')">Drag & Resize</a>
                 </li>
-                <li>
-                    <a href="">Floater</a>
+                <li ng-click="setActive($event)">
+                    <a href="" ng-click="setComponent('jd')">Just Drag</a>
+                </li>
+                <li ng-click="setActive($event)">
+                    <a href="" ng-click="setComponent('fl')">Floater</a>
                 </li>
             </ul>
         </div>
         <div class="span10">
             <div ng-switch on="component" >
                 <div ng-switch-when="flash" ng-include="'partial/flash.html'"></div>
+                <div ng-switch-when="tabs" ng-include="'partial/tabs.html'"></div>
+                <div ng-switch-when="cm"></div>
+                <div ng-switch-default></div>
             </div>
         </div>
 

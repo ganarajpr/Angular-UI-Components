@@ -60,6 +60,19 @@ angular.module('myApp.directives', [])
             });
         };
     })
+    .directive('navlist',function() {
+        return function(scope, elm, attrs) {
+            $(".active",elm).append('<div class="arrow-left"></div>');
+            scope.setActive = function(evt)
+            {
+                $(".arrow-left",elm).remove();
+                $(".active",elm).removeClass("active");
+                angular.element(evt.currentTarget).addClass("active");
+                $(".active",elm).append('<div class="arrow-left"></div>');
+            }
+
+        };
+    })
     .directive('codemirror',function() {
         return function(scope, elm, attrs) {
             scope.cm = CodeMirror.fromTextArea(elm.get(0), {mode: 'text/html',
